@@ -15,6 +15,7 @@ namespace FinalProjectFDM
         {
             Random rand = new Random();
             int result = rand.Next(1, 10);
+            //generates a random number between 1 and 10
             return result;
         }
 
@@ -22,6 +23,7 @@ namespace FinalProjectFDM
         {
             if (GetOneTen() > 5)
             {
+                //if the result is greater than 5
                 //add from the context the game payout value to the user account value
             }
         }
@@ -31,6 +33,7 @@ namespace FinalProjectFDM
             Random rand = new Random();
 
             List<int> unsortedlotterylist = new List<int>();
+            
             while (unsortedlotterylist.Count < 6)
             {
                             result = rand.Next(1, 50);
@@ -40,7 +43,9 @@ namespace FinalProjectFDM
                             }
                             unsortedlotterylist.Add(result);
             }
+            // this makes sure the list contains 6 unique, random numbers between 1 and 50
             lotterylist = unsortedlotterylist.OrderBy(v => v).ToList();
+            //this sorts the list in ascending order
             return lotterylist;
             
         }
@@ -54,8 +59,11 @@ namespace FinalProjectFDM
             unsorteduserlotterylist.Add(four);
             unsorteduserlotterylist.Add(five);
             unsorteduserlotterylist.Add(six);
+            //the user's six numbers are added to a list
+
 
             userlotterylist = unsorteduserlotterylist.OrderBy(v => v).ToList();
+            //the list is sorted so it can be compared
             return userlotterylist;
         }
 
@@ -63,6 +71,7 @@ namespace FinalProjectFDM
         {
             if (game == user)
             {
+                //if the generated numbers are the same as the users return true
                 return true;
             }
             else
@@ -75,6 +84,7 @@ namespace FinalProjectFDM
         {
             if (Lotteryresult(lotterylist, userlotterylist) == true)
             {
+                //when the generated numbers and the user numbers match
                 //add from the context the game payout value to the user account value
             }
         }
