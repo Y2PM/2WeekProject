@@ -26,7 +26,7 @@ namespace FinalProjectFDM
             }
         }
 
-        public List<int> lottery()
+        public List<int> Lottery()
         {
             Random rand = new Random();
 
@@ -45,7 +45,7 @@ namespace FinalProjectFDM
             
         }
 
-        public List<int> userlottery(int one, int two, int three, int four, int five, int six)
+        public List<int> Userlottery(int one, int two, int three, int four, int five, int six)
         {
             List<int> unsorteduserlotterylist = new List<int>();
             unsorteduserlotterylist.Add(one);
@@ -59,7 +59,7 @@ namespace FinalProjectFDM
             return userlotterylist;
         }
 
-        public bool lotteryresult(List<int> game, List<int> user)
+        public bool Lotteryresult(List<int> game, List<int> user)
         {
             if (game == user)
             {
@@ -73,7 +73,7 @@ namespace FinalProjectFDM
 
         public void LottoWin()
         {
-            if (lotteryresult(lotterylist, userlotterylist) == true)
+            if (Lotteryresult(lotterylist, userlotterylist) == true)
             {
                 //add from the context the game payout value to the user account value
             }
