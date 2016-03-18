@@ -34,7 +34,8 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
-    <Reference Include="EntityFramework.SqlServer">
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="System" />
@@ -51,58 +52,58 @@
   <ItemGroup>
     <Compile Include="Create\CreateMember.cs" />
     <Compile Include="Delete\DeleteMember.cs" />
-    <Compile Include="FinalProject.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>FinalProject.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="FinalProject.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>FinalProject.tt</DependentUpon>
-    </Compile>
-    <Compile Include="FinalProject.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>FinalProject.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Game.cs">
-      <DependentUpon>FinalProject.tt</DependentUpon>
+      <DependentUpon>GroupProject.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GroupProject.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GroupProject.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GroupProject.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GroupProject.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GroupProject.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GroupProject.edmx</DependentUpon>
     </Compile>
     <Compile Include="Member.cs">
-      <DependentUpon>FinalProject.tt</DependentUpon>
+      <DependentUpon>GroupProject.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <EntityDeploy Include="FinalProject.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>FinalProject.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.Config" />
-    <None Include="FinalProject.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>FinalProject.edmx</DependentUpon>
-      <LastGenOutput>FinalProject.Context.cs</LastGenOutput>
-    </None>
-    <None Include="FinalProject.edmx.diagram">
-      <DependentUpon>FinalProject.edmx</DependentUpon>
-    </None>
-    <None Include="FinalProject.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>FinalProject.edmx</DependentUpon>
-      <LastGenOutput>FinalProject.cs</LastGenOutput>
-    </None>
-    <None Include="packages.config" />
+    <Compile Include="Update\UpdateMember.cs" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Read\" />
-    <Folder Include="Update\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="GroupProject.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>GroupProject.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="GroupProject.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>GroupProject.edmx</DependentUpon>
+      <LastGenOutput>GroupProject.Context.cs</LastGenOutput>
+    </None>
+    <None Include="GroupProject.edmx.diagram">
+      <DependentUpon>GroupProject.edmx</DependentUpon>
+    </None>
+    <None Include="GroupProject.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>GroupProject.edmx</DependentUpon>
+      <LastGenOutput>GroupProject.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
