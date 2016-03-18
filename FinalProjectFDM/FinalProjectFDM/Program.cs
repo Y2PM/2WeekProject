@@ -11,12 +11,20 @@ namespace FinalProjectFDM
         static void Main(string[] args)
         {
             DecathonGame decgame = new DecathonGame();
-            List<int> lotto = decgame.lottery();
-            foreach (var num in lotto)
+            List<int> lotto = decgame.Lottery();
+            //foreach (var num in lotto)
+            //{
+            //    Console.WriteLine(num);
+            //}
+            List<int> userlotto = decgame.Userlottery(48, 35, 27, 11, 14, 8);
+            if (decgame.Lotteryresult(lotto, userlotto) == true)
             {
-                Console.WriteLine(num);
+                Console.WriteLine("You have won!");
             }
-
+            else
+            {
+                Console.WriteLine("You have lost. Better Luck Next Time.");
+            }
             Console.Read();
         }
     }
