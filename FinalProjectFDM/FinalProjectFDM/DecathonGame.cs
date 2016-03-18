@@ -15,5 +15,13 @@ namespace FinalProjectFDM
             return result;
         }
 
+        public void DecWin()
+        {
+            if (GetOneTen() > 5)
+            {
+                //add from the context the game payout value to the user account value
+            }
+        }
+
     }
 }
