@@ -18,5 +18,6 @@ namespace EntityFramework
         public string m_username { get; set; }
         public string m_password { get; set; }
         public Nullable<decimal> m_account { get; set; }
+        public string m_name { get; set; }
     }
 }
