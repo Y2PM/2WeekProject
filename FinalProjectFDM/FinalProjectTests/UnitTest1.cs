@@ -17,7 +17,7 @@ namespace FinalProjectTests
             int thenumber = decgame.GetOneTen();
 
             //Assert
-
+            
         }
     }
 }
