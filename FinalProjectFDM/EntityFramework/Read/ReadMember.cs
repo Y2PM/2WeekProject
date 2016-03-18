@@ -20,18 +20,18 @@ namespace EntityFramework.Read
             context = groupprojectEntities;
         }
 
-        public List<Member> ReadAllUsers()
+        public List<Member> ReadAllMembers()
         {
 
             List<Member> _members = context.Members.ToList<Member>();
             return _members;
         }
 
-        public Member ReadSpecificUser(int id)
+        public Member ReadSpecificMember(int id)
         {
             Member noMemberFound = new Member()
             {
-                //name = "User Does Not Exist"
+                m_name = "Member Does Not Exist"
             };
 
             if ((context.Members.SingleOrDefault(x => x.member_id == id)) != null)

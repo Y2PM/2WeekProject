@@ -20,12 +20,11 @@ namespace EntityFramework.Update
             context = groupprojectEntities;
         }
 
-        public void UpdateUserMethod(Member memberToUpdate)
+        public void UpdateMemberMethod(Member memberToUpdate)
         {
             if ((context.Members.SingleOrDefault(x => x.member_id == memberToUpdate.member_id)) != null)
             {
                 Member memberInDB = context.Members.Where<Member>(x => x.member_id == memberToUpdate.member_id).First();
-                memberInDB.member_id = memberToUpdate.member_id;
                 memberInDB.m_username = memberToUpdate.m_username;
                 memberInDB.m_password = memberToUpdate.m_password;
                 memberInDB.m_account = memberToUpdate.m_account;
