@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using FinalProjectFDM;
 
 namespace FinalProjectTests
 {
@@ -10,13 +11,12 @@ namespace FinalProjectTests
         public void TestMethodGetOneTenReturnsAnIntFromBetweenOneAndTen()
         {
             //Arrange
-
+            DecathonGame decgame = new DecathonGame();
 
             //Act
-
+            int thenumber = decgame.GetOneTen();
 
             //Assert
-
 
         }
     }
