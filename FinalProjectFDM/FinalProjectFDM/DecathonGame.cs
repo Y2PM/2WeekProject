@@ -8,7 +8,8 @@ namespace FinalProjectFDM
 {
     public class DecathonGame
     {
-        List<int> lotterylist = new List<int>();
+        List<int> lotterylist;
+        List<int> userlotterylist;
         int result;
         public int GetOneTen()
         {
@@ -28,25 +29,57 @@ namespace FinalProjectFDM
         public List<int> lottery()
         {
             Random rand = new Random();
-            //do
-            //{
-            //result = rand.Next(1, 50);
-            //    lotterylist.Add(result);
 
-            //} while (lotterylist.Contains(result) == false && lotterylist.Count < 6);
-            while (lotterylist.Count < 6)
+            List<int> unsortedlotterylist = new List<int>();
+            while (unsortedlotterylist.Count < 6)
             {
                             result = rand.Next(1, 50);
-                            if (lotterylist.Contains(result))
+                            if (unsortedlotterylist.Contains(result))
                             {
                                 result ++;
                             }
-                lotterylist.Add(result);
+                            unsortedlotterylist.Add(result);
             }
-
+            lotterylist = unsortedlotterylist.OrderBy(v => v).ToList();
             return lotterylist;
             
         }
+
+        public List<int> userlottery(int one, int two, int three, int four, int five, int six)
+        {
+            List<int> unsorteduserlotterylist = new List<int>();
+            unsorteduserlotterylist.Add(one);
+            unsorteduserlotterylist.Add(two);
+            unsorteduserlotterylist.Add(three);
+            unsorteduserlotterylist.Add(four);
+            unsorteduserlotterylist.Add(five);
+            unsorteduserlotterylist.Add(six);
+
+            userlotterylist = unsorteduserlotterylist.OrderBy(v => v).ToList();
+            return userlotterylist;
+        }
+
+        public bool lotteryresult(List<int> game, List<int> user)
+        {
+            if (game == user)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public void LottoWin()
+        {
+            if (lotteryresult(lotterylist, userlotterylist) == true)
+            {
+                //add from the context the game payout value to the user account value
+            }
+        }
+
+
 
     }
 }
