@@ -2,7 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using FinalProjectFDM;
 
-namespace FinalProjectTests
+namespace Tests
 {
     [TestClass]
     public class UnitTest1
@@ -17,18 +17,8 @@ namespace FinalProjectTests
             int thenumber = decgame.GetOneTen();
 
             //Assert
-            
-        }
-
-        [TestMethod]
-        public void Test_Bet_ReturnsBool_whenCalledWithBet()
-        {
-            //Arrange
-
-            //Act
-
-            //Assert
 
         }
+
     }
 }
