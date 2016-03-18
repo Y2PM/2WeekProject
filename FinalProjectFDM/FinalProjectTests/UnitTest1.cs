@@ -19,5 +19,16 @@ namespace FinalProjectTests
             //Assert
 
         }
+
+        [TestMethod]
+        public void Test_Bet_ReturnsBool_whenCalledWithBet()
+        {
+            //Arrange
+
+            //Act
+
+            //Assert
+
+        }
     }
 }
