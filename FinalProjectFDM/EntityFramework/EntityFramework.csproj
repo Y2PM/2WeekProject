@@ -76,6 +76,7 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Read\ReadMember.cs" />
+    <Compile Include="Update\UpdateGame.cs" />
     <Compile Include="Update\UpdateMember.cs" />
   </ItemGroup>
   <ItemGroup>
