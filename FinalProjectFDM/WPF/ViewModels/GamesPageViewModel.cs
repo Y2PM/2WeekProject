@@ -31,7 +31,7 @@ namespace WPF.ViewModels
         public void navigateToHomePage()
         {
             MainWindowViewModel windowViewModel = App.Current.MainWindow.DataContext as MainWindowViewModel;
-            windowViewModel.page = "HomePage.xaml";
+            windowViewModel.page = "MainPage.xaml";
         }
     }
 }
