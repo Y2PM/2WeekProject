@@ -13,6 +13,6 @@
     </Page.DataContext>
 
     <Grid>
-        <Button Content="Home" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button  Command="{Binding navigateToHomePageCommand}" Content="Home" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="75"/>
     </Grid>
 </Page>
