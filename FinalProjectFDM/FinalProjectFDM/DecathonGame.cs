@@ -84,6 +84,7 @@ namespace FinalProjectFDM
 
         public int Matcher(List<int> game, List<int> user)
         {
+            //counts how many of the user's numbers occur in the lottery numbers
             foreach (var n in user)
             {
                 if (game.Contains(n))
@@ -114,6 +115,8 @@ namespace FinalProjectFDM
 
         public List<int> LuckyNumber()
         {
+            //generates a number between 1 and 10. makes it occur 3 times in a list and all other values are distinct
+
             int lnumber = GetOneTen();
             List<int> numberlist = new List<int>();
             numberlist.Add(lnumber);
@@ -123,7 +126,7 @@ namespace FinalProjectFDM
             while (numberlist.Count < 9)
             {
                 result = GetOneTen();
-                if (!numberlist.Contains(result))
+                if (!numberlist.Contains(result) && !numberlist.Contains(lnumber))
                 {
                     numberlist.Add(result);
                 }
@@ -133,6 +136,7 @@ namespace FinalProjectFDM
 
         public void LuckyNWin(int user, List<int> lnumbers)
             {
+            //if the user's number is the lucky number occuring 3 times in the list, they win
 
             int numcount = lnumbers.Where(x => x.Equals(user)).Count();
             if (numcount >= 3)
