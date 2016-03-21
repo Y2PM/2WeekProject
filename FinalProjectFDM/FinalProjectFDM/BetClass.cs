@@ -14,12 +14,11 @@ namespace FinalProjectFDM
             Int32 maxRange = 100;
             Int32 minRange = 0;
             string Result0;
-            string Result1;
+            string Result1 = "0.00";
 
             if (numberBid > maxRange || numberBid < minRange)
             {
                 Result0 = "+++invalid input+++";
-                Result1 = "0.00";
                 Result.Add(Result0);
                 Result.Add(Result1);
                 return Result;
@@ -42,7 +41,6 @@ namespace FinalProjectFDM
             else
             {
                 Result0 = "loose";
-                Result1 = "0.00";
                 Result.Add(Result0);
                 Result.Add(Result1);
             }
