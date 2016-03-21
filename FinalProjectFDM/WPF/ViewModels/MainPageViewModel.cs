@@ -9,6 +9,31 @@ namespace WPF.ViewModels
 {
     public class MainPageViewModel : BaseViewModel
     {
+        private ICommand _navigateToMembersPageCommand;
+        public ICommand navigateToMembersPageCommand
+        {
+            get
+            {
+                if (_navigateToMembersPageCommand == null)
+                {
+                    _navigateToMembersPageCommand = new Command(navigateToMembersPage, canNavigateToMembersPage);
+                }
+                return _navigateToMembersPageCommand;
+            }
+            set { _navigateToMembersPageCommand = value; }
+        }
+
+        public bool canNavigateToMembersPage()
+        {
+            return true;
+        }
+
+        public void navigateToMembersPage()
+        {
+            MainWindowViewModel windowViewModel = App.Current.MainWindow.DataContext as MainWindowViewModel;
+            windowViewModel.page = "MembersPage.xaml";
+        }
+
         private ICommand _navigateToGamesPageCommand;
         public ICommand navigateToGamesPageCommand
         {
@@ -34,29 +59,6 @@ namespace WPF.ViewModels
             windowViewModel.page = "GamesPage.xaml";
         }
 
-        private ICommand _navigateToMembersPageCommand;
-        public ICommand navigateToMembersPageCommand
-        {
-            get
-            {
-                if (_navigateToMembersPageCommand == null)
-                {
-                    _navigateToMembersPageCommand = new Command(navigateToMembersPage, canNavigateToMembersPage);
-                }
-                return _navigateToMembersPageCommand;
-            }
-            set { _navigateToMembersPageCommand = value; }
-        }
-
-        public bool canNavigateToMembersPage()
-        {
-            return true;
-        }
-
-        public void navigateToMembersPage()
-        {
-            MainWindowViewModel windowViewModel = App.Current.MainWindow.DataContext as MainWindowViewModel;
-            windowViewModel.page = "MembersPage.xaml";
-        }
+        
     }
 }
