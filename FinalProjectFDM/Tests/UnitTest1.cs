@@ -23,6 +23,46 @@ namespace Tests
         }
 
         [TestMethod]
+        public void TestMethod()
+        {
+            //Arrange
+            //test initialize instance of decathongame
+            DecathonGame decgame = new DecathonGame();
+
+            //Act
+            //int thenumber = decgame.GetOneTen();
+
+            //Assert
+            //would need to mock the value of getoneten to see this
+
+        }
+        //dec win won't add if getoneresultisodd
+        //decwin will add to context when result is even
+        //decwin will add value from context to another in context
+
+        //lottery returns a unique list
+        //lottery returns a sorted list
+
+            //userlottery returns a sorted list
+
+            //lotteryresult returns true for matching lists and false otherwise
+            //will need to mock set up these lists
+
+            //matcher checks the occurence of a value in a list
+            //that matcher's matchcount is the same as the above occurence
+
+            //lottowin adds or calls on context when matchcount is greater than or equal to four
+            //lotto win adds a quarter of payout to account for match of 4
+            //lottowin adds a third of payout to account for match of 5
+            //lottowin adds full payout to account for match of 6
+
+            //luckynumber adds the same random number thrice to a list
+            //luckynumber adds unique numbers to list
+            //luckynumbers returns a list of length 9
+
+            //luckynwin adds payout to account if user number occurs 3 or more times
+
+        [TestMethod]
         public void TestMethodLotteryReturnsAListOfLengthSix()
         {
             //Arrange

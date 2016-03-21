@@ -11,6 +11,8 @@ namespace FinalProjectFDM
         List<int> lotterylist;
         List<int> userlotterylist;
         int result;
+        int matchcount;
+
         public int GetOneTen()
         {
             Random rand = new Random();
@@ -21,9 +23,9 @@ namespace FinalProjectFDM
 
         public void DecWin()
         {
-            if (GetOneTen() > 5)
+            if (GetOneTen() % 2 == 0)
             {
-                //if the result is greater than 5
+                //if the result is even
                 //add from the context the game payout value to the user account value
             }
         }
@@ -80,6 +82,19 @@ namespace FinalProjectFDM
             }
         }
 
+        public int Matcher(List<int> game, List<int> user)
+        {
+            //counts how many of the user's numbers occur in the lottery numbers
+            foreach (var n in user)
+            {
+                if (game.Contains(n))
+                {
+                    matchcount++;
+                }
+            }
+            return matchcount;
+        }
+
         public void LottoWin()
         {
             if (Lotteryresult(lotterylist, userlotterylist) == true)
@@ -87,9 +102,48 @@ namespace FinalProjectFDM
                 //when the generated numbers and the user numbers match
                 //add from the context the game payout value to the user account value
             }
+            else if (matchcount == 4)
+            {
+                //if the user has 4 of the winning numbers the can get a quarter of the payout
+            }
+            else if (matchcount == 5)
+            {
+                //the user gets a third of the payout
+                //no other lotto conditions warrant a payout
+            }
         }
 
+        public List<int> LuckyNumber()
+        {
+            //generates a number between 1 and 10. makes it occur 3 times in a list and all other values are distinct
 
+            int lnumber = GetOneTen();
+            List<int> numberlist = new List<int>();
+            numberlist.Add(lnumber);
+            numberlist.Add(lnumber);
+            numberlist.Add(lnumber);
+
+            while (numberlist.Count < 9)
+            {
+                result = GetOneTen();
+                if (!numberlist.Contains(result) && !numberlist.Contains(lnumber))
+                {
+                    numberlist.Add(result);
+                }
+            }
+            return numberlist;
+        }
+
+        public void LuckyNWin(int user, List<int> lnumbers)
+            {
+            //if the user's number is the lucky number occuring 3 times in the list, they win
+
+            int numcount = lnumbers.Where(x => x.Equals(user)).Count();
+            if (numcount >= 3)
+            {
+                //add payout value to the user's account
+            }
+    }
 
     }
 }
