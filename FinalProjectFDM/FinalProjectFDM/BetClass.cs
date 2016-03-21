@@ -18,7 +18,7 @@ namespace FinalProjectFDM
 
             if (numberBid > maxRange || numberBid < minRange)
             {
-                Result0 = "invalid input";
+                Result0 = "+++invalid input+++";
                 Result1 = "0.00";
                 Result.Add(Result0);
                 Result.Add(Result1);

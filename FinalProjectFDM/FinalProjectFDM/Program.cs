@@ -29,13 +29,13 @@ namespace FinalProjectFDM
             Console.Read();
             */
 
-            
+            /*
             //Trying Bet method.
             BetClass BC = new BetClass();
-            List<string> TryGame = BC.Bet(23, 5);
+            List<string> TryGame = BC.Bet(200, 5);
             Console.WriteLine("You "+TryGame[0] + ", your return is £"+TryGame[1]+"p");
             Console.ReadLine();
-            
+            */
         }
     }
 }
