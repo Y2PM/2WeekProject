@@ -111,7 +111,7 @@ namespace Tests
             //Arrange
             BetClass BetObj = new BetClass();
             //Act
-            string result = BetObj.Bet(0.5, 5);
+            List<string> result = BetObj.Bet(50,5);
             //Assert
             Assert.IsNotNull(result);
         }
@@ -123,12 +123,11 @@ namespace Tests
             BetClass BetObj = new BetClass();
             string expected = "invalid input";
             //Act
-            string result1 = BetObj.Bet(101, 5);
-            string result2 = BetObj.Bet(-1, 5);
+            List<string> result1 = BetObj.Bet(101, 5);
+            List<string> result2 = BetObj.Bet(-1, 5);
             //Assert
-            Assert.AreEqual(expected, result1);
-            Assert.AreEqual(expected, result2);
-
+            Assert.AreEqual(expected, result1[0]);
+            Assert.AreEqual(expected, result2[0]);
         }
         //---------------
         
