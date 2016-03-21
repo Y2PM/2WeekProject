@@ -19,7 +19,7 @@ namespace FinalProjectFDM
             if (numberBid > maxRange || numberBid < minRange)
             {
                 Result0 = "invalid input";
-                Result1 = "0";
+                Result1 = "0.00";
                 Result.Add(Result0);
                 Result.Add(Result1);
                 return Result;
@@ -29,20 +29,20 @@ namespace FinalProjectFDM
             Int32 RInt = RandObject.Next(minRange, maxRange + 1);
 
             //Calculate odds
-            Int32 Odds = Math.Abs(RInt - numberBid) / (maxRange - minRange);
+            double Odds = ((maxRange - (double)numberBid) / (maxRange - minRange)) * 100;
             double WinReturn = Odds * moneyGiven + moneyGiven;
 
             if (numberBid >= RInt)
             {
                 Result0 = "win";
-                Result1 = WinReturn.ToString();
+                Result1 = WinReturn.ToString("f2");
                 Result.Add(Result0);
                 Result.Add(Result1);
             }
             else
             {
-                Result0 = "Loose";
-                Result1 = "0";
+                Result0 = "loose";
+                Result1 = "0.00";
                 Result.Add(Result0);
                 Result.Add(Result1);
             }

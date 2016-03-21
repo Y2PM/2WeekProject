@@ -8,6 +8,6 @@ namespace FinalProjectFDM
 {
     interface IBet
     {
-        public List<string> Bet(Int32 numberBid, double moneyGiven);
+        List<string> Bet(Int32 numberBid, double moneyGiven);
     }
 }
