@@ -44,27 +44,67 @@ namespace Tests
             Assert.AreEqual(distinctcount, lottolist.Count());
         }
 
-        [TestMethod]
-        public void TestMethodLotteryReturnsASortedList()
+        //[TestMethod]
+        //public void TestMethodLotteryReturnsASortedList()
+        //{
+        //    //Arrange
+        //    DecathonGame decgame = new DecathonGame();
+        //    List<int> lottolist = decgame.Lottery();
+        //    List<int> listsorted = new List<int>();
+        //    //Act
+        //    listsorted = lottolist.OrderBy(v => v).ToList();
+
+        //    //Assert
+        //    Assert.AreEqual(listsorted, lottolist);
+        //}
+        ////dec win won't add if getoneresultisodd
+        ////decwin will add to context when result is even
+        ////decwin will add value from context to another in context
+
+
+        //[TestMethod]
+        //public void TestMethodUserLotteryReturnsASortedList()
+        //{
+        //    //Arrange
+        //    DecathonGame decgame = new DecathonGame();
+        //    List<int> lottolist = decgame.Userlottery(8, 2, 3, 50, 7, 14);
+        //    List<int> listsorted = new List<int>();
+        //    //Act
+        //    listsorted = lottolist.OrderBy(v => v).ToList();
+
+        //    //Assert
+        //    Assert.AreEqual(listsorted, lottolist);
+        //}
+
+        public void TestMethodUserLottoValidateReturnsFalseWhenGivenANumberOverFifty()
         {
             //Arrange
             DecathonGame decgame = new DecathonGame();
-            List<int> lottolist = decgame.Lottery();
-            List<int> listsorted = new List<int>();
             //Act
 
-            listsorted = lottolist.OrderBy(v => v).ToList();
+            //Assert
+            Assert.AreEqual(false, decgame.userlottovalidate(24, 4, 1, 2, 3, 60));
+        }
+
+        public void TestMethodUserLottoValidateReturnsFalseWhenGivenDuplicateNumbers()
+        {
+            //Arrange
+            DecathonGame decgame = new DecathonGame();
+            //Act
 
             //Assert
-            Assert.AreEqual(listsorted, lottolist);
+            Assert.AreEqual(false, decgame.userlottovalidate(24, 24, 1, 2, 3, 40));
         }
-        //dec win won't add if getoneresultisodd
-        //decwin will add to context when result is even
-        //decwin will add value from context to another in context
 
+        public void TestMethodUserLottoValidateReturnsTrueWhenGivenSixUniqueNumbersBetweenOneAndFifty()
+        {
+            //Arrange
+            DecathonGame decgame = new DecathonGame();
+            //Act
 
-            //userlottery returns a sorted list
-
+            //Assert
+            Assert.AreEqual(false, decgame.userlottovalidate(24, 24, 1, 2, 3, 40));
+        }
             //lotteryresult returns true for matching lists and false otherwise
             //will need to mock set up these lists
 

@@ -52,32 +52,47 @@ namespace FinalProjectFDM
             
         }
 
-        //public void userlottovalidate()
-        //{
-        //    List<int> unsorteduserlotterylist = new List<int>();
-        //    if (!unsorteduserlotterylist.Contains())
-        //    {
-               
-    //    foreach (var numb in numbers)
-    //{
-    //     if (!unsorteduserlotterylist.Contains(numb))
-    //{
-    //     unsorteduserlotterylist.Add(numb);
-    //}
-    //}
-        //    }
-        //}
+        public bool userlottovalidate(int one, int two, int three, int four, int five, int six)
+        {
+            List<int> numbers = new List<int>();
+            List<int> unsorteduserlotterylist = new List<int>();
+            numbers.Add(one);
+            numbers.Add(two);
+            numbers.Add(three);
+            numbers.Add(four);
+            numbers.Add(five);
+            numbers.Add(six);
+
+                foreach (var numb in numbers)
+                {
+                    if (!unsorteduserlotterylist.Contains(numb) && numb >= 1 && numb <= 50)
+                    {
+                        unsorteduserlotterylist.Add(numb);
+                    }
+                }
+                if (unsorteduserlotterylist.Count == 6)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+        }
 
         public List<int> Userlottery(int one, int two, int three, int four, int five, int six)
         {
             List<int> unsorteduserlotterylist = new List<int>();
-            unsorteduserlotterylist.Add(one);
-            unsorteduserlotterylist.Add(two);
-            unsorteduserlotterylist.Add(three);
-            unsorteduserlotterylist.Add(four);
-            unsorteduserlotterylist.Add(five);
-            unsorteduserlotterylist.Add(six);
-            //the user's six numbers are added to a list
+            if (userlottovalidate(one, two, three, four, five, six) == true)
+            {
+                unsorteduserlotterylist.Add(one);
+                unsorteduserlotterylist.Add(two);
+                unsorteduserlotterylist.Add(three);
+                unsorteduserlotterylist.Add(four);
+                unsorteduserlotterylist.Add(five);
+                unsorteduserlotterylist.Add(six);
+                //the user's six numbers are added to a list
+            }
 
             userlotterylist = unsorteduserlotterylist.OrderBy(v => v).ToList();
             //the list is sorted so it can be compared
