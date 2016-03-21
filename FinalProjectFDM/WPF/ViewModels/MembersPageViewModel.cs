@@ -52,9 +52,9 @@ namespace WPF.ViewModels
 
 
 
-         //<summary>
-         //view member
-         //</summary>
+        //<summary>
+        //view member
+        //</summary>
 
         private ObservableCollection<Member> _member;
         public ObservableCollection<Member> member
@@ -94,9 +94,9 @@ namespace WPF.ViewModels
             member = new ObservableCollection<Member>(memberList);
         }
 
-         //<summary>
-         //view members
-         //</summary>
+        //<summary>
+        //view members
+        //</summary>
 
         private ObservableCollection<Member> _members;
         public ObservableCollection<Member> members

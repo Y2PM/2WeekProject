@@ -18,10 +18,10 @@
             <TabItem Header="Add Game">
                 <Grid Background="#FFE5E5E5">
                     <TextBlock HorizontalAlignment="Left" Margin="45,46,0,0" TextWrapping="Wrap" Text="Name:" VerticalAlignment="Top"/>
-                    <TextBox HorizontalAlignment="Left" Height="23" Margin="94,43,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <TextBox Text="{Binding name}" HorizontalAlignment="Left" Height="23" Margin="94,43,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
                     <TextBlock HorizontalAlignment="Left" Margin="40,90,0,0" TextWrapping="Wrap" Text="Payout:" VerticalAlignment="Top"/>
-                    <TextBox HorizontalAlignment="Left" Height="23" Margin="94,83,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-                    <Button Content="Add Game" HorizontalAlignment="Left" Margin="94,151,0,0" VerticalAlignment="Top" Width="75"/>
+                    <TextBox Text="{Binding payout}" HorizontalAlignment="Left" Height="23" Margin="94,83,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <Button Command="{Binding addGameCommand}" Content="Add Game" HorizontalAlignment="Left" Margin="94,151,0,0" VerticalAlignment="Top" Width="75"/>
                 </Grid>
             </TabItem>
             <TabItem Header="View Game">
