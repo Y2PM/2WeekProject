@@ -2,6 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using FinalProjectFDM;
 using System.Collections.Generic;
+using System.Linq;
 using Moq;
 
 namespace Tests
@@ -9,12 +10,18 @@ namespace Tests
     [TestClass]
     public class UnitTest1
     {
+        //[TestInitialize()]
+        //public void Initialize()
+        //{
+        //    DecathonGame decgame = new DecathonGame();
+        //}
+
+
         [TestMethod]
         public void TestMethodGetOneTenReturnsAnIntFromBetweenOneAndTen()
         {
             //Arrange
             DecathonGame decgame = new DecathonGame();
-
             //Act
             int thenumber = decgame.GetOneTen();
 
@@ -23,25 +30,38 @@ namespace Tests
         }
 
         [TestMethod]
-        public void TestMethod()
+        public void TestMethodLotteryReturnsAListOfSixUniqueInts()
         {
             //Arrange
-            //test initialize instance of decathongame
             DecathonGame decgame = new DecathonGame();
-
+            List<int> lottolist = decgame.Lottery();
+            IEnumerable<int> lottodistinct = lottolist.Distinct();
             //Act
-            //int thenumber = decgame.GetOneTen();
+
+            int distinctcount = lottodistinct.Count();
 
             //Assert
-            //would need to mock the value of getoneten to see this
+            Assert.AreEqual(distinctcount, lottolist.Count());
+        }
 
+        [TestMethod]
+        public void TestMethodLotteryReturnsASortedList()
+        {
+            //Arrange
+            DecathonGame decgame = new DecathonGame();
+            List<int> lottolist = decgame.Lottery();
+            List<int> listsorted = new List<int>();
+            //Act
+
+            listsorted = lottolist.OrderBy(v => v).ToList();
+
+            //Assert
+            Assert.AreEqual(listsorted, lottolist);
         }
         //dec win won't add if getoneresultisodd
         //decwin will add to context when result is even
         //decwin will add value from context to another in context
 
-        //lottery returns a unique list
-        //lottery returns a sorted list
 
             //userlottery returns a sorted list
 
