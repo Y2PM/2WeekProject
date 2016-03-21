@@ -22,7 +22,7 @@ namespace FinalProjectFDM
                 Result.Add(Result0);
                 Result.Add(Result1);
                 return Result;
-            }//Defensive coding, check number is in range.
+            }//Check number is in range.
 
             Random RandObject = new Random();
             Int32 RInt = RandObject.Next(minRange, maxRange + 1);
