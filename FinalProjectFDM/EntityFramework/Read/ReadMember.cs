@@ -40,8 +40,6 @@ namespace EntityFramework.Read
                 return _member;
             }
             else { return noMemberFound; }
-
         }
-
     }
 }
