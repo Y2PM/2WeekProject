@@ -103,6 +103,31 @@ namespace Tests
 
             //mock the lists within the lottery method
         }
+        /*
+        //----------------
+        [TestMethod]
+        public void Test_Bet_ReturnsNotNull_WhenCalled()
+        {
+            //Arrange
+            BetClass BetObj = new BetClass();
+            //Act
+            string result = BetObj.Bet(0.5, 5);
+            //Assert
+            Assert.IsNotNull(result);
+        }
 
+        [TestMethod]
+        public void Test_Bet_ReturnsInvalidInputMessage_IfNumberBidIsOutOfRange0And1()
+        {
+            //Arrange
+            BetClass BetObj = new BetClass();
+            string expected = "invalid input";
+            //Act
+            string result = BetObj.Bet(2, 5);
+            //Assert
+            Assert.AreEqual(expected, result);
+        }
+        //---------------
+        */
     }
 }
