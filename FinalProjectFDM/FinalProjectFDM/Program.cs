@@ -10,6 +10,7 @@ namespace FinalProjectFDM
     {
         static void Main(string[] args)
         {
+            /*
             DecathonGame decgame = new DecathonGame();
             List<int> lotto = decgame.Lottery();
             //foreach (var num in lotto)
@@ -26,6 +27,15 @@ namespace FinalProjectFDM
                 Console.WriteLine("You have lost. Better Luck Next Time.");
             }
             Console.Read();
+            */
+
+            /*
+            //Trying Bet method.
+            BetClass BC = new BetClass();
+            List<string> TryGame = BC.Bet(73, 5);
+            Console.WriteLine("You "+TryGame[0] + ", your return is £"+TryGame[1]+"p");
+            Console.ReadLine();
+            */
         }
     }
 }

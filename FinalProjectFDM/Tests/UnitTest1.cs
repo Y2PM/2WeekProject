@@ -2,6 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using FinalProjectFDM;
 using System.Collections.Generic;
+using System.Linq;
 using Moq;
 
 namespace Tests
@@ -9,12 +10,18 @@ namespace Tests
     [TestClass]
     public class UnitTest1
     {
+        //[TestInitialize()]
+        //public void Initialize()
+        //{
+        //    DecathonGame decgame = new DecathonGame();
+        //}
+
+
         [TestMethod]
         public void TestMethodGetOneTenReturnsAnIntFromBetweenOneAndTen()
         {
             //Arrange
             DecathonGame decgame = new DecathonGame();
-
             //Act
             int thenumber = decgame.GetOneTen();
 
@@ -23,25 +30,38 @@ namespace Tests
         }
 
         [TestMethod]
-        public void TestMethod()
+        public void TestMethodLotteryReturnsAListOfSixUniqueInts()
         {
             //Arrange
-            //test initialize instance of decathongame
             DecathonGame decgame = new DecathonGame();
-
+            List<int> lottolist = decgame.Lottery();
+            IEnumerable<int> lottodistinct = lottolist.Distinct();
             //Act
-            //int thenumber = decgame.GetOneTen();
+
+            int distinctcount = lottodistinct.Count();
 
             //Assert
-            //would need to mock the value of getoneten to see this
+            Assert.AreEqual(distinctcount, lottolist.Count());
+        }
 
+        [TestMethod]
+        public void TestMethodLotteryReturnsASortedList()
+        {
+            //Arrange
+            DecathonGame decgame = new DecathonGame();
+            List<int> lottolist = decgame.Lottery();
+            List<int> listsorted = new List<int>();
+            //Act
+
+            listsorted = lottolist.OrderBy(v => v).ToList();
+
+            //Assert
+            Assert.AreEqual(listsorted, lottolist);
         }
         //dec win won't add if getoneresultisodd
         //decwin will add to context when result is even
         //decwin will add value from context to another in context
 
-        //lottery returns a unique list
-        //lottery returns a sorted list
 
             //userlottery returns a sorted list
 
@@ -111,21 +131,23 @@ namespace Tests
             //Arrange
             BetClass BetObj = new BetClass();
             //Act
-            string result = BetObj.Bet(0.5, 5);
+            List<string> result = BetObj.Bet(50,5);
             //Assert
             Assert.IsNotNull(result);
         }
 
         [TestMethod]
-        public void Test_Bet_ReturnsInvalidInputMessage_IfNumberBidIsOutOfRange0And1()
+        public void Test_Bet_ReturnsInvalidInputMessage_IfNumberBidIsOutOfRange0And100()
         {
             //Arrange
             BetClass BetObj = new BetClass();
-            string expected = "invalid input";
+            string expected = "+++invalid input+++";
             //Act
-            string result = BetObj.Bet(2, 5);
+            List<string> result1 = BetObj.Bet(101, 5);
+            List<string> result2 = BetObj.Bet(-1, 5);
             //Assert
-            Assert.AreEqual(expected, result);
+            Assert.AreEqual(expected, result1[0]);
+            Assert.AreEqual(expected, result2[0]);
         }
         //---------------
         

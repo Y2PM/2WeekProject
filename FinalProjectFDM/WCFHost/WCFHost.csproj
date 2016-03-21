@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F3EA46D2-B18F-473C-BB98-F466A322B38F}</ProjectGuid>
+    <ProjectGuid>{052A8470-9289-4B40-9EB9-16BBCF3B3786}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FinalProjectFDM</RootNamespace>
-    <AssemblyName>FinalProjectFDM</AssemblyName>
+    <RootNamespace>WCFHost</RootNamespace>
+    <AssemblyName>WCFHost</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -41,10 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BetClass.cs" />
-    <Compile Include="DecathonGame.cs" />
-    <Compile Include="IBet.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="HostProgram.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

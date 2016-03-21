@@ -52,6 +52,22 @@ namespace FinalProjectFDM
             
         }
 
+        //public void userlottovalidate()
+        //{
+        //    List<int> unsorteduserlotterylist = new List<int>();
+        //    if (!unsorteduserlotterylist.Contains())
+        //    {
+               
+    //    foreach (var numb in numbers)
+    //{
+    //     if (!unsorteduserlotterylist.Contains(numb))
+    //{
+    //     unsorteduserlotterylist.Add(numb);
+    //}
+    //}
+        //    }
+        //}
+
         public List<int> Userlottery(int one, int two, int three, int four, int five, int six)
         {
             List<int> unsorteduserlotterylist = new List<int>();
@@ -62,7 +78,6 @@ namespace FinalProjectFDM
             unsorteduserlotterylist.Add(five);
             unsorteduserlotterylist.Add(six);
             //the user's six numbers are added to a list
-
 
             userlotterylist = unsorteduserlotterylist.OrderBy(v => v).ToList();
             //the list is sorted so it can be compared
