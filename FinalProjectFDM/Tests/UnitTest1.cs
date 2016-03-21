@@ -121,7 +121,7 @@ namespace Tests
         {
             //Arrange
             BetClass BetObj = new BetClass();
-            string expected = "invalid input";
+            string expected = "+++invalid input+++";
             //Act
             List<string> result1 = BetObj.Bet(101, 5);
             List<string> result2 = BetObj.Bet(-1, 5);
