@@ -6,7 +6,7 @@
       xmlns:vm="clr-namespace:WPF.ViewModels"
       mc:Ignorable="d" 
       d:DesignHeight="300" d:DesignWidth="300"
-	Title="GamesPage">
+	Title="GamesPage" Height="600" Width="600">
 
     <Page.DataContext>
         <vm:GamesPageViewModel/>

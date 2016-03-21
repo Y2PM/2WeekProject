@@ -6,7 +6,7 @@
       xmlns:vm="clr-namespace:WPF.ViewModels"
       mc:Ignorable="d" 
       d:DesignHeight="300" d:DesignWidth="300"
-	Title="MainPage">
+	Title="MainPage" Height="600" Width="600">
 
     <Page.DataContext>
         <vm:MainPageViewModel/>
