@@ -10,7 +10,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		GroupProjectSQLQuery.sql = GroupProjectSQLQuery.sql
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBLayer", "EntityFramework\DBLayer.csproj", "{376B66BE-5285-4D89-B5CD-A6C5BFB004E8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFramework", "EntityFramework\EntityFramework.csproj", "{376B66BE-5285-4D89-B5CD-A6C5BFB004E8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{B6AF0647-B10D-4121-A3F8-2488EB53D889}"
 EndProject
