@@ -16,7 +16,7 @@ namespace FinalProjectFDM
             string Result0;
             string Result1 = "0.00";
 
-            if (numberBid > maxRange || numberBid < minRange)
+            if (numberBid > maxRange || numberBid < minRange || moneyGiven < 0)
             {
                 Result0 = "+++invalid input+++";
                 Result.Add(Result0);
