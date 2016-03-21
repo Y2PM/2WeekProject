@@ -131,21 +131,23 @@ namespace Tests
             //Arrange
             BetClass BetObj = new BetClass();
             //Act
-            string result = BetObj.Bet(0.5, 5);
+            List<string> result = BetObj.Bet(50,5);
             //Assert
             Assert.IsNotNull(result);
         }
 
         [TestMethod]
-        public void Test_Bet_ReturnsInvalidInputMessage_IfNumberBidIsOutOfRange0And1()
+        public void Test_Bet_ReturnsInvalidInputMessage_IfNumberBidIsOutOfRange0And100()
         {
             //Arrange
             BetClass BetObj = new BetClass();
-            string expected = "invalid input";
+            string expected = "+++invalid input+++";
             //Act
-            string result = BetObj.Bet(2, 5);
+            List<string> result1 = BetObj.Bet(101, 5);
+            List<string> result2 = BetObj.Bet(-1, 5);
             //Assert
-            Assert.AreEqual(expected, result);
+            Assert.AreEqual(expected, result1[0]);
+            Assert.AreEqual(expected, result2[0]);
         }
         //---------------
         
