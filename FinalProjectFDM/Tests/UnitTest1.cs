@@ -106,21 +106,30 @@ namespace Tests
             Assert.AreEqual(false, decgame.userlottovalidate(24, 24, 1, 2, 3, 40));
         }
             //lotteryresult returns true for matching lists and false otherwise
-            //will need to mock set up these lists
 
-            //matcher checks the occurence of a value in a list
-            //that matcher's matchcount is the same as the above occurence
+        public void TestMethodLotteryResultReturnsTrueWhenTheListsAreEqual()
+        {
+            //Arrange
+            DecathonGame decgame = new DecathonGame();
+            List<int> listone = new List<int>();
+            List<int> listtwo = new List<int>();
+            //Act
+            
+            //Assert
+            Assert.AreEqual(true, decgame.Lotteryresult(listone, listtwo));
+        }
 
-            //lottowin adds or calls on context when matchcount is greater than or equal to four
-            //lotto win adds a quarter of payout to account for match of 4
-            //lottowin adds a third of payout to account for match of 5
-            //lottowin adds full payout to account for match of 6
-
-            //luckynumber adds the same random number thrice to a list
-            //luckynumber adds unique numbers to list
-            //luckynumbers returns a list of length 9
-
-            //luckynwin adds payout to account if user number occurs 3 or more times
+        public void TestMethodLotteryResultReturnsFalseWhenTheListsAreNotEqual()
+        {
+            //Arrange
+            DecathonGame decgame = new DecathonGame();
+            List<int> listone = new List<int>();
+            List<int> listtwo = new List<int>();
+            //Act
+            listtwo.Add(1);
+            //Assert
+            Assert.AreEqual(false, decgame.Lotteryresult(listone, listtwo));
+        }
 
         [TestMethod]
         public void TestMethodLotteryReturnsAListOfLengthSix()
@@ -149,20 +158,85 @@ namespace Tests
         }
 
         [TestMethod]
-        public void TestMethodLotteryresultReturnsAListOfLengthSix()
+        public void TestMethodMatcherReturnsZeroWhenGivenAnEmptyList()
         {
             //Arrange
             DecathonGame decgame = new DecathonGame();
-            //<Mock>
+            List<int> listone = new List<int>();
+            List<int> listtwo = new List<int>();
+            //Act
+            int finalnumber = decgame.Matcher(listone, listtwo);
 
-            ////Act
-            //List<int> thenumbers = decgame.Userlottery(1, 2, 3, 4, 5, 6);
-
-            ////Assert
-            //Assert.IsTrue(thenumbers.Count == 6);
-
-            //mock the lists within the lottery method
+            //Assert
+            Assert.AreEqual(0, finalnumber);
         }
+
+        [TestMethod]
+        public void TestMethodMatcherReturnsZeroWhenGivenListsWithNoCommonalities()
+        {
+            //Arrange
+            DecathonGame decgame = new DecathonGame();
+            List<int> listone = new List<int>();
+            List<int> listtwo = new List<int>();
+            listone.Add(3);
+            listone.Add(4);
+            listone.Add(99);
+            listtwo.Add(7);
+            //Act
+            int finalnumber = decgame.Matcher(listone, listtwo);
+
+            //Assert
+            Assert.AreEqual(0, finalnumber);
+        }
+
+        [TestMethod]
+        public void TestMethodMatcherReturnsOneWhenGivenTwoListsWithOneCommonality()
+        {
+            //Arrange
+            DecathonGame decgame = new DecathonGame();
+            List<int> listone = new List<int>();
+            List<int> listtwo = new List<int>();
+            listone.Add(3);
+            listone.Add(4);
+            listone.Add(99);
+            listtwo.Add(3);
+            //Act
+            int finalnumber = decgame.Matcher(listone, listtwo);
+
+            //Assert
+            Assert.AreEqual(1, finalnumber);
+        }
+
+        [TestMethod]
+        public void TestMethodMatcherReturnsOneWhenGivenTwoListsWithOneCommonality()
+        {
+            //Arrange
+            DecathonGame decgame = new DecathonGame();
+            List<int> listone = new List<int>();
+            List<int> listtwo = new List<int>();
+            listone.Add(3);
+            listone.Add(4);
+            listone.Add(99);
+            listtwo.Add(3);
+            listtwo.Add(4);
+            //Act
+            int finalnumber = decgame.Matcher(listone, listtwo);
+
+            //Assert
+            Assert.AreEqual(2, finalnumber);
+        }
+
+        //lottowin adds or calls on context when matchcount is greater than or equal to four
+        //lotto win adds a quarter of payout to account for match of 4
+        //lottowin adds a third of payout to account for match of 5
+        //lottowin adds full payout to account for match of 6
+
+        //luckynumber adds the same random number thrice to a list
+        //luckynumber adds unique numbers to list
+        //luckynumbers returns a list of length 9
+
+        //luckynwin adds payout to account if user number occurs 3 or more times
+
         
         //----------------Joe's tests:
         [TestMethod]
