@@ -103,8 +103,8 @@ namespace Tests
 
             //mock the lists within the lottery method
         }
-        /*
-        //----------------
+        
+        //----------------Joe's tests:
         [TestMethod]
         public void Test_Bet_ReturnsNotNull_WhenCalled()
         {
@@ -128,6 +128,6 @@ namespace Tests
             Assert.AreEqual(expected, result);
         }
         //---------------
-        */
+        
     }
 }
