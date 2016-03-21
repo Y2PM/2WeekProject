@@ -117,15 +117,18 @@ namespace Tests
         }
 
         [TestMethod]
-        public void Test_Bet_ReturnsInvalidInputMessage_IfNumberBidIsOutOfRange0And1()
+        public void Test_Bet_ReturnsInvalidInputMessage_IfNumberBidIsOutOfRange0And100()
         {
             //Arrange
             BetClass BetObj = new BetClass();
             string expected = "invalid input";
             //Act
-            string result = BetObj.Bet(2, 5);
+            string result1 = BetObj.Bet(101, 5);
+            string result2 = BetObj.Bet(-1, 5);
             //Assert
-            Assert.AreEqual(expected, result);
+            Assert.AreEqual(expected, result1);
+            Assert.AreEqual(expected, result2);
+
         }
         //---------------
         
