@@ -226,14 +226,40 @@ namespace Tests
             Assert.AreEqual(2, finalnumber);
         }
 
+        [TestMethod]
+        public void TestMethodLuckyNumberReturnsSixDistinctNumbers()
+        {
+            //Arrange
+            DecathonGame decgame = new DecathonGame();
+            List<int> lnlist = decgame.LuckyNumber();
+            //Act
+            IEnumerable<int> luckydistinct = lnlist.Distinct();
+            //Act
+
+            int distinctcount = luckydistinct.Count();
+
+            //Assert
+            Assert.AreEqual(6, distinctcount);
+
+        }
+
+        [TestMethod]
+        public void TestMethodLuckyNumberReturnsAListOfLengthNine()
+        {
+            //Arrange
+            DecathonGame decgame = new DecathonGame();
+
+            //Act
+            List<int> lnlist = decgame.LuckyNumber();
+            //Assert
+            Assert.AreEqual(9, lnlist.Count());
+        }
+
+
         //lottowin adds or calls on context when matchcount is greater than or equal to four
         //lotto win adds a quarter of payout to account for match of 4
         //lottowin adds a third of payout to account for match of 5
         //lottowin adds full payout to account for match of 6
-
-        //luckynumber adds the same random number thrice to a list
-        //luckynumber adds unique numbers to list
-        //luckynumbers returns a list of length 9
 
         //luckynwin adds payout to account if user number occurs 3 or more times
 
